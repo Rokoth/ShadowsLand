@@ -1,0 +1,14 @@
+<h1 id="label">Настройки</h1>
+
+<p *ngIf="!settings"><em>Loading...</em></p>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+
+  <label for="phone">Телефон: </label>
+  <input id="phone" type="text" formControlName="phone">
+
+  <label for="email">Email: </label>
+  <input id="email" type="text" formControlName="email">
+
+  <button type="submit" [disabled]="!profileForm.valid">Сохранить</button>
+</form>

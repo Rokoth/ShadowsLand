@@ -1,0 +1,32 @@
+<h1 id="label">Авторизация</h1>
+
+<mat-tab-group>
+  <mat-tab label="Авторизация">
+    <form [formGroup]="authForm" (ngSubmit)="onAuth()">
+
+      <label for="login">Логин: </label>
+      <input id="login" type="text" formControlName="login">
+
+      <label for="password">Пароль: </label>
+      <input id="password" type="password" formControlName="password">
+
+      <button type="submit" [disabled]="!authForm.valid">Отправить</button>
+    </form>
+
+  </mat-tab>
+  <mat-tab label="Регистрация">
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+
+      <label for="login">Логин: </label>
+      <input id="login" type="text" formControlName="login">
+
+      <label for="password">Пароль: </label>
+      <input id="password" type="password" formControlName="password">
+
+      <button type="submit" [disabled]="!registerForm.valid">Отправить</button>
+    </form>
+
+  </mat-tab>
+</mat-tab-group>
+
+<p *ngIf="error_message"><em>error_message</em></p>
