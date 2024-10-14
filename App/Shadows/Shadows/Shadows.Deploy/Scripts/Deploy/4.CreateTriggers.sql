@@ -44,24 +44,65 @@ $BODY$
   FOR EACH ROW
   EXECUTE PROCEDURE history_trigger();
 
-  CREATE TRIGGER tr_hist_client
+  CREATE TRIGGER tr_hist_person
   AFTER INSERT OR UPDATE OR DELETE
-  ON client
+  ON person
   FOR EACH ROW
   EXECUTE PROCEDURE history_trigger();
 
-  CREATE TRIGGER tr_hist_release
+  CREATE TRIGGER tr_hist_inventory
   AFTER INSERT OR UPDATE OR DELETE
-  ON release
+  ON inventory
   FOR EACH ROW
   EXECUTE PROCEDURE history_trigger();
 
-  CREATE TRIGGER tr_hist_release_architect
+  CREATE TRIGGER tr_hist_characteristic
   AFTER INSERT OR UPDATE OR DELETE
-  ON release_architect
+  ON characteristic
   FOR EACH ROW
   EXECUTE PROCEDURE history_trigger();
 
+  CREATE TRIGGER tr_hist_person_characteristic
+  AFTER INSERT OR UPDATE OR DELETE
+  ON person_characteristic
+  FOR EACH ROW
+  EXECUTE PROCEDURE history_trigger();
+
+  CREATE TRIGGER tr_hist_map
+  AFTER INSERT OR UPDATE OR DELETE
+  ON map
+  FOR EACH ROW
+  EXECUTE PROCEDURE history_trigger();
+
+  CREATE TRIGGER tr_hist_location
+  AFTER INSERT OR UPDATE OR DELETE
+  ON "location"
+  FOR EACH ROW
+  EXECUTE PROCEDURE history_trigger();
+
+  CREATE TRIGGER tr_hist_point
+  AFTER INSERT OR UPDATE OR DELETE
+  ON point
+  FOR EACH ROW
+  EXECUTE PROCEDURE history_trigger();
+
+  CREATE TRIGGER tr_hist_ground
+  AFTER INSERT OR UPDATE OR DELETE
+  ON ground
+  FOR EACH ROW
+  EXECUTE PROCEDURE history_trigger();
+
+  CREATE TRIGGER tr_hist_nps
+  AFTER INSERT OR UPDATE OR DELETE
+  ON nps
+  FOR EACH ROW
+  EXECUTE PROCEDURE history_trigger();
+
+  CREATE TRIGGER tr_hist_nps_characteristic
+  AFTER INSERT OR UPDATE OR DELETE
+  ON nps_characteristic
+  FOR EACH ROW
+  EXECUTE PROCEDURE history_trigger();
   
 --allow_delete
 CREATE OR REPLACE FUNCTION public.before_modify_table()
