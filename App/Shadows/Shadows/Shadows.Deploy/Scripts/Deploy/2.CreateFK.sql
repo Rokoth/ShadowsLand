@@ -1,10 +1,12 @@
-﻿--client
-alter table client 
-add constraint fk_client_user_id 
+﻿--person
+alter table person 
+add constraint fk_person_user_id 
 	foreign key(userid) 
 		references "user"(id) 
 		on delete no action on update no action;
 
+
+------------------------------------------------------
 
 --release
 alter table release 

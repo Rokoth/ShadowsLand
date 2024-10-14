@@ -5,6 +5,8 @@ create unique index uidx_user_login
 create index idx_user_name
     on "user"("name");
 
+
+
 --client
 create unique index uidx_client_login 
 	on client("login") where not is_deleted;
