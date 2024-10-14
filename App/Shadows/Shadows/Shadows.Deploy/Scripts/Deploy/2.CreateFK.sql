@@ -5,15 +5,16 @@ add constraint fk_person_user_id
 		references "user"(id) 
 		on delete no action on update no action;
 
+--person_characteristic
+alter table person_characteristic 
+add constraint fk_person_characteristic_person_id 
+	foreign key(person_id) 
+		references person(id) 
+		on delete no action on update no action;
 
 ------------------------------------------------------
 
---release
-alter table release 
-add constraint fk_release_client_id 
-	foreign key(client_id) 
-		references client(id) 
-		on delete no action on update no action;
+
 
 --release_architect
 alter table release_architect 
