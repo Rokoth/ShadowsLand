@@ -92,27 +92,62 @@ CREATE TRIGGER tr_onmodify_user
   FOR EACH ROW
   EXECUTE PROCEDURE before_modify_table();
 
-  CREATE TRIGGER tr_onmodify_client
+  CREATE TRIGGER tr_onmodify_person
   AFTER INSERT OR UPDATE OR DELETE
-  ON client
+  ON person
   FOR EACH ROW
   EXECUTE PROCEDURE before_modify_table();
 
-  CREATE TRIGGER tr_onmodify_release
+  CREATE TRIGGER tr_onmodify_inventory
   AFTER INSERT OR UPDATE OR DELETE
-  ON release
+  ON inventory
   FOR EACH ROW
   EXECUTE PROCEDURE before_modify_table();
 
-  CREATE TRIGGER tr_onmodify_release_architect
+  CREATE TRIGGER tr_onmodify_characteristic
   AFTER INSERT OR UPDATE OR DELETE
-  ON release_architect
+  ON characteristic
   FOR EACH ROW
   EXECUTE PROCEDURE before_modify_table();
 
-  CREATE TRIGGER tr_onmodify_load_history
+  CREATE TRIGGER tr_onmodify_person_characteristic
   AFTER INSERT OR UPDATE OR DELETE
-  ON load_history
+  ON person_characteristic
   FOR EACH ROW
   EXECUTE PROCEDURE before_modify_table();
-    
+
+  CREATE TRIGGER tr_onmodify_map
+  AFTER INSERT OR UPDATE OR DELETE
+  ON map
+  FOR EACH ROW
+  EXECUTE PROCEDURE before_modify_table();
+
+  CREATE TRIGGER tr_onmodify_location
+  AFTER INSERT OR UPDATE OR DELETE
+  ON "location"
+  FOR EACH ROW
+  EXECUTE PROCEDURE before_modify_table();
+
+  CREATE TRIGGER tr_onmodify_point
+  AFTER INSERT OR UPDATE OR DELETE
+  ON point
+  FOR EACH ROW
+  EXECUTE PROCEDURE before_modify_table();
+
+  CREATE TRIGGER tr_onmodify_ground
+  AFTER INSERT OR UPDATE OR DELETE
+  ON ground
+  FOR EACH ROW
+  EXECUTE PROCEDURE before_modify_table();
+
+  CREATE TRIGGER tr_onmodify_nps
+  AFTER INSERT OR UPDATE OR DELETE
+  ON nps
+  FOR EACH ROW
+  EXECUTE PROCEDURE before_modify_table();
+  
+  CREATE TRIGGER tr_onmodify_nps_characteristic
+  AFTER INSERT OR UPDATE OR DELETE
+  ON nps_characteristic
+  FOR EACH ROW
+  EXECUTE PROCEDURE before_modify_table();
