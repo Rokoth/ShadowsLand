@@ -5,6 +5,12 @@ add constraint fk_person_user_id
 		references "user"(id) 
 		on delete no action on update no action;
 
+alter table person 
+add constraint fk_person_point_id 
+	foreign key(point_id) 
+		references point(id) 
+		on delete no action on update no action;
+
 --person_characteristic
 alter table person_characteristic 
 add constraint fk_person_characteristic_person_id 
@@ -30,6 +36,8 @@ add constraint fk_person_inventory_inventory_id
 	foreign key(inventory_id) 
 		references inventory(id) 
 		on delete no action on update no action;
+
+
 
 ------------------------------------------------------
 
