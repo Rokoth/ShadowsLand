@@ -37,7 +37,12 @@ add constraint fk_person_inventory_inventory_id
 		references inventory(id) 
 		on delete no action on update no action;
 
-
+--location_map
+alter table location 
+add constraint fk_location_map_id 
+	foreign key(map_id) 
+		references map(id) 
+		on delete no action on update no action;
 
 ------------------------------------------------------
 
