@@ -29,6 +29,11 @@ create table if not exists "h_user"(
 	, "user_id"     varchar       null
 );
 
+
+
+
+------------------------------------------------------------
+
 create table if not exists product(
 	  id            uuid          not null primary key
 	, "name"        varchar(100)  not null
