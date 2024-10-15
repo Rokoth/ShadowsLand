@@ -12,6 +12,25 @@ add constraint fk_person_characteristic_person_id
 		references person(id) 
 		on delete no action on update no action;
 
+alter table person_characteristic 
+add constraint fk_person_characteristic_characteristic_id 
+	foreign key(characteristic_id) 
+		references characteristic(id) 
+		on delete no action on update no action;
+
+--person_inventory
+alter table person_inventory 
+add constraint fk_person_inventory_person_id 
+	foreign key(person_id) 
+		references person(id) 
+		on delete no action on update no action;
+
+alter table person_inventory 
+add constraint fk_person_inventory_inventory_id 
+	foreign key(inventory_id) 
+		references inventory(id) 
+		on delete no action on update no action;
+
 ------------------------------------------------------
 
 
